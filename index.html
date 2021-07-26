@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+input[type=button] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+input[type=button]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.col-95 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+  margin-left: 295px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit], input[type=button] {
+    width: 100%;
+    margin-top: 0;
+  }
+  .col-95 {
+	margin-left: 0px;
+	width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form name="myform" method="post" action="cv.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="role">Role</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="role" name="role" placeholder="role..">
+      </div>
+    </div>
+<!--	<div class="row">
+      <div class="col-25">
+        <label for="faname">Father's Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="faname" name="faname" placeholder="Father's Name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="gender">Gender</label>
+      </div>
+      <div class="col-75">
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>-->
+	<div class="row">
+      <div class="col-25">
+        <label for="mob">Contact</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="mob" name="mob" placeholder="Mobile Number..">
+      </div>
+    </div>	
+	<div class="row">
+      <div class="col-25">
+        <label for="email">Email Id</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="email" name="email" placeholder="Email Id..">
+      </div>
+    </div>	
+	<div class="row">
+      <div class="col-25">
+        <label for="website">Website</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="website" name="website" placeholder="Website..">
+      </div>
+    </div>	
+    <div class="row">
+      <div class="col-25">
+        <label for="address">Address</label>
+      </div>
+      <div class="col-75">
+			<input type="text" id="street" name="street" placeholder="street..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="city" name="city" placeholder="city..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="state" name="state" placeholder="state..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="country" name="country" placeholder="country..">
+	  </div>
+    </div>	
+
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="zip" name="zip" placeholder="zip..">
+	  </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="work">Work Experience</label>
+      </div>
+      <div class="col-75">
+			<input type="text" id="start1" name="start1" placeholder="start year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="end1" name="end1" placeholder="end year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="role1" name="role1" placeholder="role..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="company1" name="company1" placeholder="company..">
+	  </div>
+    </div>	
+<br>
+    <div class="row">
+      <div class="col-25">
+        <label for="work">Educational Background</label>
+      </div>
+      <div class="col-75">
+			<input type="text" id="edustart1" name="edustart1" placeholder="start year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="eduend1" name="eduend1" placeholder="end year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="course1" name="course1" placeholder="course..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="institute1" name="institute1" placeholder="school/college..">
+	  </div>
+    </div>
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="board1" name="board1" placeholder="board/university..">
+	  </div>
+    </div>
+	<br>
+	<div class="row">
+	<div class="col-95">
+			<input type="text" id="edustart2" name="edustart2" placeholder="start year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="eduend2" name="eduend2" placeholder="end year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="course2" name="course2" placeholder="course..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="institute2" name="institute2" placeholder="school/college..">
+	  </div>
+    </div>
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="board2" name="board2" placeholder="board/university..">
+	  </div>
+    </div>
+	<br>
+		<div class="row">
+	<div class="col-95">
+			<input type="text" id="edustart3" name="edustart3" placeholder="start year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="eduend3" name="eduend3" placeholder="end year..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="course3" name="course3" placeholder="course..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="institute3" name="institute3" placeholder="school/college..">
+	  </div>
+    </div>
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="board3" name="board3" placeholder="board/university..">
+	  </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="skill">Skill</label>
+      </div>
+      <div class="col-75">
+			<input type="text" id="skill1" name="skill1" placeholder="skill1..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="skill2" name="skill2" placeholder="skill2..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="skill3" name="skill3" placeholder="skill3..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="skill4" name="skill4" placeholder="skill4..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="skill5" name="skill5" placeholder="skill5..">
+	  </div>
+    </div>	
+<br>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="bio">Bio</label>
+      </div>
+      <div class="col-75">
+        <textarea id="bio" name="bio" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+	<br>
+	 <div class="row">
+      <div class="col-25">
+        <label for="social">Social Links</label>
+      </div>
+      <div class="col-75">
+			<input type="text" id="social1" name="social1" placeholder="facebook username..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="social2" name="social2" placeholder="twitter username..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="social3" name="social3" placeholder="github username..">
+	  </div>
+    </div>	
+	<div class="row">
+      <div class="col-95">
+			<input type="text" id="social4" name="social4" placeholder="linkedin username..">
+	  </div>
+    </div>	
+<br>
+    <div class="row">
+      <input type="submit" value="Submit">
+	  <br><br></div>
+  </form>
+</div>
+</body>
+</html>
